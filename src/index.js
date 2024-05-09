@@ -24,8 +24,8 @@ function clearElement(elementID) {
 }
 
 function handleHeaderNav() {
-  menuSection(); // home section - default
-  menuBtn.classList.add("selected");
+  homeSection(); // home section - default
+  homeBtn.classList.add("selected");
 
   headerNavBtns.forEach(button => {
     button.addEventListener('click', function() {
@@ -53,7 +53,6 @@ function handleHeaderNav() {
 }
 handleHeaderNav();
 
-
 const instaBtn = document.getElementById('instagramBtn');
 const instaImg = document.createElement('img');
 instaImg.src = instagramIcon;
@@ -66,4 +65,20 @@ const jobBoardBtn = document.getElementById('jobBoardBtn');
 jobBoardBtn.textContent = "Work With Us";
 jobBoardBtn.addEventListener('click', function() {
   window.open('https://www.romansnyc.com/work-with-us/#/form', '_self');
-})
+});
+
+function scrollIndicator() {
+  const footer = document.querySelector('footer');
+
+  const scrollTop = window.scrollY || document.documentElement.scrollTop; 
+  const windowHeight = window.innerHeight;
+  const totalHeight = document.documentElement.scrollHeight;
+
+  if (scrollTop + windowHeight >= totalHeight) {
+    footer.style.boxShadow = `none`;
+  } else {
+    footer.style.boxShadow = `inset 0 1px 0 rgba(255, 255, 255, 0.0), 0 22px 70px 8px rgba(255, 223, 186, 0.69), 0 0 0 1px rgba(0, 0, 0, 0.0)`;
+  }
+}
+window.addEventListener('scroll', scrollIndicator);
+scrollIndicator(); // initial check for page bottom on load

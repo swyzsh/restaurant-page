@@ -17,5 +17,8 @@ function homeSection() {
   reservationBtn.id = "reservationBtn";
   reservationBtn.innerHTML = "RESERVE";
   contentContainer.appendChild(reservationBtn);
+  reservationBtn.addEventListener('click', function() {
+    window.open('https://www.romansnyc.com/#/form-reservations', '_self');
+  });
 }
 export default homeSection;
