@@ -9,7 +9,7 @@ function homeSection() {
   contentContainer.appendChild(title);
 
   const reservationDetail = document.createElement('p');
-  reservationDetail.textContent = "Reservations available via Resy, and we always welcome walk-ins. For groups larger than 4 guests, please reach out to us directly at hello@romansnyc.com.";
+  reservationDetail.textContent = "Reservations available via Resy, and we always welcome walk-ins. For groups larger than 4 guests, please reach out to us directly at hello@romansnyc.com";
   reservationDetail.classList.add("reservation");
   contentContainer.appendChild(reservationDetail);
 
